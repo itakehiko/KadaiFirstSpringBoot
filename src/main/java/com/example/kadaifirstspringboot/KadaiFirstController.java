@@ -14,7 +14,7 @@ import java.util.Locale;
 public class KadaiFirstController {
 
     @GetMapping("/dayofweek/{targetDateString}")
-    public String dayOfWeek(@PathVariable String targetDateString) {
+    public String dispDayOfWeek(@PathVariable String targetDateString) {
         DateTimeFormatter formatter     = DateTimeFormatter.ofPattern("yyyyMMdd");
         DayOfWeek targetDayOfWeek       = LocalDate.parse(targetDateString, formatter).getDayOfWeek();
         String targetDayOfWeekString    = targetDayOfWeek.getDisplayName(TextStyle.FULL, Locale.ENGLISH);
